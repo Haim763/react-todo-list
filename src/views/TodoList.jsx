@@ -1,4 +1,4 @@
-import React, { useState, useReducer, Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import {
   Button,
   Paper,
@@ -11,11 +11,11 @@ import TodoItem from './TodoItem';
 import styles from './TodoList.module.css';
 import { addTodo, removeTodo, toggleTodoStatus } from '../actions/TodoListActions';
 import EmptyTodoItem from '../components/EmptyTodoItem';
-import {useStore} from '../store/useStore';
+import { useStore } from '../store/useStore';
 
 export default () => {
   const [text, setText] = useState('');
-  const [state, dispatch] = useStore();
+  const { state, dispatch } = useStore();
   const { todos, todoCount } = state;
 
   const handleAddClick = e => {

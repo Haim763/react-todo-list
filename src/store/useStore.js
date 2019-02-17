@@ -7,10 +7,10 @@ const initialState = {
   todoCount: 0
 };
 
-const storeContext = createContext(initialState);
+const StoreContext = createContext(initialState);
 
 export const useStore = () => {
-  const { state, dispatch } = useContext(storeContext);
+  const { state, dispatch } = useContext(StoreContext);
 
   return { state, dispatch };
 }
